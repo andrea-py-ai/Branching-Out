@@ -12,6 +12,9 @@ USERS = load_users()
 
 def filter_users(key, value):
     """Filter users by a given key and value (case-insensitive for strings)."""
+    if not USERS or key not in USERS[0]:
+        return []
+
     if isinstance(value, str):
         return [user for user in USERS if user.get(key, "").lower() == value.lower()]
     return [user for user in USERS if user.get(key) == value]
@@ -21,6 +24,8 @@ def print_users(users):
     """Print a list of user dictionaries."""
     if not users:
         print("No users found.")
+        return
+
     for user in users:
         print(user)
 
@@ -35,7 +40,7 @@ def main():
                 value = int(value)
             except ValueError:
                 print("Invalid age. Must be a number.")
-                exit()
+                return
         filtered = filter_users(filter_option, value)
         print_users(filtered)
     else:
