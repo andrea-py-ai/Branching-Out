@@ -63,4 +63,7 @@ Enter a value for name: Alice
 ---
 
 ## 🪶 License
-This project is open-source and available for educational or personal use.
+This project is shared under a custom open-use license.
+You may view, study, and modify the code for personal or educational purposes.
+Redistribution or commercial use requires written permission from the author.
+All software is provided “as is,” without warranty of any kind.
